@@ -17,38 +17,22 @@ export default function DocumentaryMediaFrame({
   return (
     <div className={clsx("w-full max-w-6xl mx-auto flex flex-col items-center", className)}>
       
-      {/* Custom Premium Frame */}
+      {/* Floral Frame from User Upload */}
       <div 
-        className="relative w-full rounded-sm bg-[#2c1d18] shadow-2xl p-3 sm:p-4 md:p-5 lg:p-6"
+        className="relative w-full shadow-2xl bg-[#f8f5ee]"
         style={{
-          backgroundImage: `
-            linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.6) 100%),
-            url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E")
-          `,
-          boxShadow: `
-            0 30px 60px -15px rgba(0,0,0,0.7),
-            inset 0 0 0 1px #0a0504,
-            inset 0 0 0 2px rgba(255,255,255,0.05),
-            inset 0 0 20px rgba(0,0,0,0.9)
-          `
+          borderStyle: 'solid',
+          borderWidth: 'clamp(20px, 5vw, 60px)',
+          borderImageSource: 'url("/images/floral-frame.png")',
+          borderImageSlice: '18%', // Adjust slice based on typical frame thickness
+          borderImageRepeat: 'stretch',
+          boxShadow: '0 30px 60px -15px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.5)'
         }}
       >
-        {/* Inner Gold Rim */}
-        <div 
-          className="relative w-full h-full bg-deep-green overflow-hidden"
-          style={{
-            borderStyle: 'solid',
-            borderWidth: 'clamp(2px, 0.6vw, 4px)',
-            borderTopColor: '#d4af37',
-            borderLeftColor: '#c5a017',
-            borderRightColor: '#a67b00',
-            borderBottomColor: '#8b6914',
-            boxShadow: '0 0 0 1px #111, 0 0 15px rgba(0,0,0,0.8)'
-          }}
-        >
+        {/* Inner shadow overlay for depth */}
+        <div className="relative w-full h-full overflow-hidden">
           {children}
-          {/* Inner Drop Shadow for depth over the content */}
-          <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.6)] z-20" />
+          <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.3)] z-20" />
         </div>
       </div>
 
