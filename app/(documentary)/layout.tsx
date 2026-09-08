@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Kufi_Arabic, Cairo } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navigation from "@/components/Navigation";
 import PageLoader from "@/components/PageLoader";
