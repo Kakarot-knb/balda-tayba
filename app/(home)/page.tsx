@@ -33,7 +33,7 @@ export default function AliSawlyHome() {
 
           {/* WhatsApp */}
           <a 
-            href="https://wa.me/961374121" 
+            href="https://wa.me/96181374121" 
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-secondary hover:text-primary-text transition-colors duration-500 pb-1"
