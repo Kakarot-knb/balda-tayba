@@ -4,68 +4,73 @@ import { motion } from 'framer-motion';
 
 const challenges = [
   {
-    title: 'الوصول إلى المناطق المتضررة',
-    desc: 'التصوير في بيئة حدودية والعمل في ظل ظروف أمنية ولوجستية معقدة.'
+    title: 'تأخير بداية العمل',
+    desc: 'تأخر انطلاق التصوير بسبب استشهاد عدد من أفراد العائلة، وآخرهم عمي الشهيد محمد مهدي صولي، وما رافق ذلك من واجبات عزاء في مكان النزوح.'
   },
   {
-    title: 'التصوير أثناء النزوح',
-    desc: 'إجراء المقابلات وتوثيق قصص الأهالي وهم بعيدون عن منازلهم وفي حالة نزوح.'
+    title: 'ضغط الوقت والحالة النفسية',
+    desc: 'العمل ضمن وقت ضيق، مع مسؤولية تنفيذ مشروع كبير، ما شكّل ضغطاً وإرهاقاً خلال فترة الإنتاج.'
   },
   {
-    title: 'توثيق المشاعر الإنسانية',
-    desc: 'العمل مع شخصيات تعيش مشاعر قوية وحساسة، مع الحفاظ على المصداقية الوثائقية والاحترام التام لمعاناتهم.'
+    title: 'تطوير الرؤية والنص',
+    desc: 'احتاجت الأفكار في البداية إلى وقت حتى تتبلور، خصوصاً للوصول إلى لغة موزونة وبلاغية تناسب العمل.'
   },
   {
-    title: 'الدمج بين الوثائقي والسينمائي',
-    desc: 'الموازنة بين المقابلات الواقعية واللقطات الوثائقية من جهة، والمشاهد السينمائية الرمزية من جهة أخرى.'
+    title: 'تعديل خطة التصوير',
+    desc: 'تم تغيير بعض الشخصيات والمقابلات، واستبدالها بشخصيات تخدم فكرة الصمود والتكافل بشكل أفضل.'
   },
   {
-    title: 'إنتاج المشاهد المعتمدة على الذكاء الاصطناعي',
-    desc: 'صناعة المشهد الرمزي الختامي باستخدام تقنيات الذكاء الاصطناعي مع الحفاظ على الاستمرارية البصرية مع اللقطات الحقيقية.'
+    title: 'التصوير وسط النزوح والقصف',
+    desc: 'تم تصوير مقابلات مع نازحين في الجنوب بالتزامن مع الضربات وموجات النزوح. كنا أحياناً ننهي مقابلة مع شخصية، فتغادر المنطقة مباشرة بعدها.'
   },
   {
-    title: 'الحفاظ على وحدة الهوية البصرية',
-    desc: 'جعل زهرة شقائق النعمان عنصراً بصرياً ورمزياً متماسكاً عبر مختلف أساليب التصوير المتبعة في الفيلم.'
+    title: 'تنفيذ مشاهد الـAI',
+    desc: 'واجهنا صعوبة في تنفيذ مشاهد الذكاء الاصطناعي في البداية مع الحفاظ على ملامح بلدة الطيبة الحقيقية.'
+  },
+  {
+    title: 'تأمين شقائق النعمان',
+    desc: 'صعوبة تأمين الوردة المطلوبة للتصوير، ما دفعني إلى تصنيع وردة شقائق النعمان يدوياً بنفسي خصيصاً للمشهد.'
+  },
+  {
+    title: 'ظروف النزوح والإنتاج',
+    desc: 'العمل من خارج الديار بعد سنوات من عدم الاستقرار، مع انقطاع الكهرباء وصعوبة التنقل وتأمين مواقع تصوير بديلة ونقل الشخصيات إليها.'
+  },
+  {
+    title: 'الترجمة والتدقيق اللغوي',
+    desc: 'ترجمة الفيلم إلى اللغة الإنكليزية ومراجعة الترجمة والتدقيق اللغوي استغرقا وقتاً طويلاً لضمان دقة المعنى وسلامة اللغة.'
   }
 ];
 
 export default function ChallengesSection() {
   return (
     <section id="challenges" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green border-t border-primary-bg/10">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-7xl">
         <motion.h2 
-          className="font-heading text-[clamp(2.5rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-bg font-bold mb-12 md:mb-16 lg:mb-24"
+          className="font-heading text-[clamp(2.5rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-bg font-bold mb-12 md:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          الصعوبات
+          التحديات وعقبات الإنتاج
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
           {challenges.map((challenge, index) => (
             <motion.div 
               key={index}
-              className="flex items-start gap-4 md:gap-6"
+              className="flex flex-col gap-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              {/* Number label */}
-              <span className="font-heading text-sm text-accent-red/80 mt-1 shrink-0">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-
-              <div className="flex flex-col gap-4 border-r-2 border-accent-red/80 pr-4 md:pr-6">
-                <h3 className="font-heading text-xl md:text-2xl text-primary-bg font-bold">
-                  {challenge.title}
-                </h3>
-                <p className="font-body text-base md:text-lg text-primary-bg/70 font-light leading-loose">
-                  {challenge.desc}
-                </p>
-              </div>
+              <h3 className="font-heading text-xl md:text-2xl text-primary-bg font-bold">
+                {challenge.title}
+              </h3>
+              <p className="font-body text-base md:text-lg text-primary-bg/75 font-light leading-relaxed">
+                {challenge.desc}
+              </p>
             </motion.div>
           ))}
         </div>
