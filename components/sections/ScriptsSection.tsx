@@ -170,7 +170,7 @@ export default function ScriptsSection() {
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-8 lg:p-12 overflow-hidden">
             {/* Dark Cinematic Backdrop */}
             <motion.div 
-              className="absolute inset-0 bg-deep-bg/90 backdrop-blur-sm"
+              className="absolute inset-0 bg-deep-green/90 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

@@ -3,7 +3,32 @@
 import { motion } from 'framer-motion';
 import DocumentaryMediaFrame from '../DocumentaryMediaFrame';
 
-const themes = ['الأرض', 'الهوية', 'الذاكرة', 'التضحية', 'النزوح', 'العودة'];
+const concepts = [
+  {
+    title: 'الرمزية والهوية',
+    content: 'دحض أسطورة "عشتار وأدونيس" وإثبات أن وردة شقائق النعمان في الطيبة لم تنبت من أساطير القدماء، بل نبتت من دماء شهدائها الفعليين، لِتتحول بتلاتها في المشاهد الملحمية إلى قذائف تصهر آليات العدو (الميركافا).'
+  },
+  {
+    title: 'العمق القرآني',
+    content: 'الربط بين اسم الضيعة "الطيبة" والجذر القرآني (الطيب) المذكور 50 مرة في القرآن الكريم ({الْكَلِمَةِ الطَّيِّبَةِ}، {الشَّجَرَةِ الطَّيِّبَةِ}، {الْمَسَاكِنِ الطَّيِّبَةِ}، و{بَلْدَةٌ طَيِّبَةٌ وَرَبٌّ غَفُورٌ}).'
+  },
+  {
+    title: 'صوت الشريط الحدودي',
+    content: 'نقل صرخة أهالي الجنوب الذين عانوا من التهجير وحُرِموا الاستقرار والحياة الطبيعية بعيداً عن منازلهم لأكثر من 3 سنوات.'
+  },
+  {
+    title: 'التضحية والصمود الإنساني',
+    content: 'توثيق قصص واقعية تُجسد العناد والوفاء للأرض (قصص الشهداء والنازحين).'
+  },
+  {
+    title: 'حتمية العودة والنصر',
+    content: 'إيصال رسالة قاطعة بأن تدمير الحجر لا يمحو الحق، وأن الركام والدمار ليسا إلا "مخاضاً عسيراً" يسبق العودة الحتمية لإنبات الأرض وبنائها من جديد.'
+  },
+  {
+    title: 'زهرة الجنوب الشهيدة فاطمة فتوني',
+    content: 'تجسيد فاطمة كـ "دحنونة الطيبة وزهرة الجنوب" التي سقطت من يد والدها، لا لتموت، بل لتتحول بتلاتها إلى قوة وقذيفة تدك دبابات "الميركافا" وتصنع النصر.'
+  }
+];
 
 export default function ConceptSection() {
   return (
@@ -14,7 +39,7 @@ export default function ConceptSection() {
           
           {/* Text Column - Natural Editorial Flow */}
           <motion.div 
-            className="flex flex-col gap-12 md:gap-16 lg:gap-24 py-0 order-2 lg:order-1"
+            className="flex flex-col gap-8 md:gap-12 lg:gap-16 py-0 order-2 lg:order-1"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -39,27 +64,24 @@ export default function ConceptSection() {
                 </DocumentaryMediaFrame>
               </div>
 
-              <div className="flex flex-col gap-6 md:gap-8 max-w-2xl order-3 lg:order-none">
-                <p className="font-body text-lg md:text-xl lg:text-2xl leading-loose text-text-secondary font-light">
-                  الفيلم لا يتعامل مع الطيبة كمجرد مساحة جغرافية، بل يستكشفها كرمز للأرض، الهوية، الذاكرة، التضحية، النزوح، والعودة.
-                </p>
-                <p className="font-body text-base md:text-lg lg:text-xl leading-loose text-text-secondary/80 font-light">
-                  يربط الفيلم بين المعنى العميق لكلمة &quot;طيّب&quot; في القرآن الكريم، ويتخذ من القرية نموذجاً مصغراً يحاكي تجربة المجتمعات الحدودية في جنوب لبنان.
-                </p>
+              <div className="flex flex-col gap-5 md:gap-6 max-w-2xl order-3 lg:order-none">
+                {concepts.map((concept, idx) => (
+                  <div key={idx} className="flex flex-col gap-1 md:gap-2">
+                    <h3 className="font-heading text-lg md:text-xl text-primary-text font-bold">
+                      {concept.title}
+                    </h3>
+                    <p className="font-body text-base md:text-lg leading-relaxed text-text-secondary font-light">
+                      {concept.content}
+                    </p>
+                  </div>
+                ))}
               </div>
-            </div>
-
-            {/* Keyword Anchor */}
-            <div className="order-4 lg:order-none">
-              <p className="font-body text-base lg:text-lg tracking-wide text-text-secondary font-bold">
-                {themes.join(' · ')}
-              </p>
             </div>
           </motion.div>
 
           {/* Image Column */}
           <motion.div 
-            className="w-full hidden lg:block order-1 lg:order-2"
+            className="w-full hidden lg:block order-1 lg:order-2 sticky top-24"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

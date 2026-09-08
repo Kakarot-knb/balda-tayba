@@ -35,7 +35,7 @@ export default function DocumentaryMediaFrame({
       >
         {/* Inner Gold Rim */}
         <div 
-          className="relative w-full h-full bg-deep-bg overflow-hidden"
+          className="relative w-full h-full bg-deep-green overflow-hidden"
           style={{
             borderStyle: 'solid',
             borderWidth: 'clamp(2px, 0.6vw, 4px)',

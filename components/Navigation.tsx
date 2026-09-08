@@ -116,7 +116,7 @@ export default function Navigation() {
             animate={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
             exit={{ opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-charcoal text-primary-bg overflow-y-auto overflow-x-hidden"
+            className="fixed inset-0 z-40 bg-deep-green text-primary-bg overflow-y-auto overflow-x-hidden"
           >
             <div className="min-h-full flex flex-col justify-center px-6 py-24 md:px-12 w-full max-w-full">
               <nav className="flex flex-col gap-2 w-full max-w-sm mx-auto">

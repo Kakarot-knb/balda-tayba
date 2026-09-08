@@ -34,10 +34,10 @@ const objectives = [
 
 export default function ObjectiveSection() {
   return (
-    <section id="objective" className="w-full py-20 md:py-32 lg:py-40 px-4 md:px-6 lg:px-12 bg-deep-bg relative overflow-hidden">
+    <section id="objective" className="w-full py-20 md:py-32 lg:py-40 px-4 md:px-6 lg:px-12 bg-deep-green relative overflow-hidden">
       
       {/* Subtle background texture/glow */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-deep-green/5 via-deep-bg to-deep-bg"></div>
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-deep-green/5 via-deep-green to-deep-green"></div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
         
@@ -132,7 +132,7 @@ export default function ObjectiveSection() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                   >
                     <div className={clsx(
-                      "w-16 h-16 rounded-full flex items-center justify-center border-4 border-deep-bg relative",
+                      "w-16 h-16 rounded-full flex items-center justify-center border-4 border-deep-green relative",
                       obj.isSpecial ? "bg-accent-red shadow-[0_0_30px_rgba(155,34,38,0.4)]" : "bg-deep-green"
                     )}>
                       {/* Outer pulse ring for special node */}
@@ -152,7 +152,7 @@ export default function ObjectiveSection() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                   >
                     <div className={clsx(
-                      "w-12 h-12 rounded-full flex items-center justify-center border-4 border-deep-bg relative",
+                      "w-12 h-12 rounded-full flex items-center justify-center border-4 border-deep-green relative",
                       obj.isSpecial ? "bg-accent-red shadow-[0_0_20px_rgba(155,34,38,0.4)]" : "bg-deep-green"
                     )}>
                        {/* Outer pulse ring for special node */}

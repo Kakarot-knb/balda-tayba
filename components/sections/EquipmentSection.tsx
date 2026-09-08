@@ -1,11 +1,48 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Camera, Aperture, Mic, SunMedium, Move3d } from 'lucide-react';
 
 const equipment = [
-  { category: 'الكاميرا', value: '2 كاميرات سوني (Sony)' },
-  { category: 'العدسات', value: '50mm, 24-70mm, 70-200mm' },
-  { category: 'الإضاءة', value: 'إضاءة Amaran 300C (عدد 2)' },
+  {
+    category: 'الكاميرات',
+    icon: Camera,
+    items: [
+      'Sony α7R V',
+      'Sony α7 IV'
+    ]
+  },
+  {
+    category: 'العدسات',
+    icon: Aperture,
+    items: [
+      'Sony FE 24–70mm F2.8 GM',
+      'Sony FE 70–200mm F2.8 GM OSS',
+      'Sony FE 50mm F1.8'
+    ]
+  },
+  {
+    category: 'الصوت',
+    icon: Mic,
+    items: [
+      'RØDE Wireless PRO'
+    ]
+  },
+  {
+    category: 'الإضاءة',
+    icon: SunMedium,
+    items: [
+      '2× amaran 300c RGBWW LED Lights',
+      '2× Godox SL100Bi Lights'
+    ]
+  },
+  {
+    category: 'الدعم والتثبيت',
+    icon: Move3d,
+    items: [
+      '2× Camera Tripods'
+    ]
+  }
 ];
 
 export default function EquipmentSection() {
@@ -19,28 +56,40 @@ export default function EquipmentSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          المعدات
+          المواد المستخدمة
         </motion.h2>
 
         <div className="border-y border-text-secondary/20">
           <div className="grid grid-cols-1 divide-y divide-text-secondary/10">
-            {equipment.map((item, index) => (
-              <motion.div 
-                key={index}
-                className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 py-6 md:py-8"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-              >
-                <div className="font-heading text-lg md:text-xl text-primary-text font-bold">
-                  {item.category}
-                </div>
-                <div className="font-body text-base md:text-lg text-text-secondary font-light">
-                  {item.value}
-                </div>
-              </motion.div>
-            ))}
+            {equipment.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div 
+                  key={index}
+                  className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-4 py-8 md:py-10"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-full bg-deep-green/5 text-deep-green border border-deep-green/10">
+                      <Icon className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.5} />
+                    </div>
+                    <div className="font-heading text-lg md:text-xl text-primary-text font-bold">
+                      {item.category}
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-1 md:gap-2">
+                    {item.items.map((val, idx) => (
+                      <div key={idx} className="font-body text-base md:text-lg text-text-secondary font-light text-right" dir="ltr">
+                        {val}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

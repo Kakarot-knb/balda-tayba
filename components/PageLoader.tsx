@@ -39,7 +39,7 @@ export default function PageLoader() {
     <AnimatePresence onExitComplete={() => setShouldRender(false)}>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-[100] bg-deep-bg flex flex-col items-center justify-center"
+          className="fixed inset-0 z-[100] bg-deep-green flex flex-col items-center justify-center"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
         >

@@ -186,7 +186,7 @@ export default function VisionSection() {
 
         {/* Conclusion */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto py-12 md:py-16 px-6 md:px-12 bg-deep-bg text-primary-bg"
+          className="text-center max-w-4xl mx-auto py-12 md:py-16 px-6 md:px-12 bg-deep-green text-primary-bg"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
