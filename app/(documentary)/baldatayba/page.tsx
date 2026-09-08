@@ -17,7 +17,7 @@ import FooterSection from "@/components/sections/FooterSection";
 
 export default function Home() {
   return (
-    <main className="relative w-full min-h-screen overflow-x-hidden">
+    <main className="relative w-full min-h-screen overflow-x-hidden bg-primary-bg">
       <HeroSection />
       <VideoSection />
       <ConceptSection />

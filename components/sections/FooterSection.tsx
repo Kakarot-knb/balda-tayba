@@ -53,12 +53,6 @@ export default function FooterSection() {
         </p>
       </motion.div>
 
-      {/* Website Creator Credit */}
-      <div className="absolute bottom-6 left-0 right-0 text-center z-10 pointer-events-none">
-        <p className="font-body text-xs md:text-sm text-primary-bg/30 font-light tracking-wide uppercase">
-          SITE BY MOHAMAD KARANBASH
-        </p>
-      </div>
     </section>
   );
 }

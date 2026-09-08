@@ -7,9 +7,9 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full h-[100svh] min-h-[600px] flex flex-col overflow-hidden bg-primary-bg"
+      className="relative w-full min-h-[100svh] flex flex-col bg-primary-bg"
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 w-full h-full flex flex-col justify-center relative z-10">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 w-full h-full flex flex-col justify-center relative z-10 pb-24 pt-16 lg:pt-0 lg:pb-0">
         
         {/* Two-Column Title Sequence */}
         <div className="w-full max-w-7xl mx-auto flex flex-col-reverse lg:flex-row justify-center items-center h-full py-16 lg:py-0 gap-16 lg:gap-24">
@@ -82,7 +82,7 @@ export default function HeroSection() {
       
       {/* Quiet scroll transition indicator at bottom center */}
       <motion.div 
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center"
+        className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1.5 }}

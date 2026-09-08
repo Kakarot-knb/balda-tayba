@@ -43,7 +43,7 @@ const challenges = [
 
 export default function ChallengesSection() {
   return (
-    <section id="challenges" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green border-t border-primary-bg/10">
+    <section id="challenges" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green border-t border-primary-bg/10 rounded-t-[3rem] lg:rounded-t-[5rem] rounded-b-[3rem] lg:rounded-b-[5rem]">
       <div className="container mx-auto max-w-7xl">
         <motion.h2 
           className="font-heading text-[clamp(2.5rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-bg font-bold mb-12 md:mb-16 lg:mb-20"

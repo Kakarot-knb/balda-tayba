@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function AISection() {
   return (
-    <section id="ai" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green">
+    <section id="ai" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green rounded-t-[3rem] lg:rounded-t-[5rem] rounded-b-[3rem] lg:rounded-b-[5rem]">
       <div className="container mx-auto max-w-5xl text-center">
         <motion.h2 
           className="font-heading text-[clamp(2.5rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-bg font-bold mb-8 md:mb-10 lg:mb-16"

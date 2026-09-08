@@ -70,8 +70,9 @@ export default function Navigation() {
     <>
       <header
         className={clsx(
-          'fixed top-0 left-0 right-0 z-50 transition-transform duration-500 ease-editorial bg-gradient-to-b from-primary-bg via-primary-bg/90 to-transparent py-6 md:py-8 pointer-events-none',
-          isHidden && !mobileMenuOpen ? '-translate-y-full' : 'translate-y-0'
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-editorial py-6 md:py-8 pointer-events-none',
+          isHidden && !mobileMenuOpen ? '-translate-y-full' : 'translate-y-0',
+          mobileMenuOpen ? 'bg-transparent' : 'bg-gradient-to-b from-primary-bg via-primary-bg/90 to-transparent'
         )}
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-end lg:justify-center items-center pointer-events-auto">

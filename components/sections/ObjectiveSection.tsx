@@ -34,7 +34,7 @@ const objectives = [
 
 export default function ObjectiveSection() {
   return (
-    <section id="objective" className="w-full py-20 md:py-32 lg:py-40 px-4 md:px-6 lg:px-12 bg-deep-green relative overflow-hidden">
+    <section id="objective" className="w-full py-20 md:py-32 lg:py-40 px-4 md:px-6 lg:px-12 bg-deep-green relative overflow-hidden rounded-t-[3rem] lg:rounded-t-[5rem]">
       
       {/* Subtle background texture/glow */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-deep-green/5 via-deep-green to-deep-green"></div>
