@@ -22,7 +22,7 @@ const progression = [
 
 export default function JourneySection() {
   return (
-    <section id="journey" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green rounded-b-[3rem] lg:rounded-b-[5rem]">
+    <section id="journey" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green arc-b">
       <div className="container mx-auto max-w-5xl">
         <motion.h2 
           className="font-heading text-[clamp(2.5rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-bg font-bold mb-16 md:mb-24 lg:mb-32 text-center"

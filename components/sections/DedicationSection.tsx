@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function DedicationSection() {
   return (
-    <section id="dedication" className="w-full py-24 md:py-32 lg:py-48 px-4 md:px-6 lg:px-12 bg-deep-green flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] rounded-t-[3rem] lg:rounded-t-[5rem]">
+    <section id="dedication" className="w-full py-24 md:py-32 lg:py-48 px-4 md:px-6 lg:px-12 bg-deep-green flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] arc-t">
       <div className="container mx-auto text-center">
         
         {/* Subtle Poppy Symbol — no glow */}

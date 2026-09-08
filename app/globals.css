@@ -102,3 +102,38 @@
     @apply scale-x-100 origin-left;
   }
 }
+
+@layer utilities {
+  /* Cinematic Arc Borders for dark sections */
+  .arc-t {
+    border-top-left-radius: 50% 40px;
+    border-top-right-radius: 50% 40px;
+  }
+  .arc-b {
+    border-bottom-left-radius: 50% 40px;
+    border-bottom-right-radius: 50% 40px;
+  }
+  
+  @media (min-width: 768px) {
+    .arc-t {
+      border-top-left-radius: 50% 80px;
+      border-top-right-radius: 50% 80px;
+    }
+    .arc-b {
+      border-bottom-left-radius: 50% 80px;
+      border-bottom-right-radius: 50% 80px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .arc-t {
+      border-top-left-radius: 50% 120px;
+      border-top-right-radius: 50% 120px;
+    }
+    .arc-b {
+      border-bottom-left-radius: 50% 120px;
+      border-bottom-right-radius: 50% 120px;
+    }
+  }
+}
+
