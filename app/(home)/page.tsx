@@ -28,8 +28,9 @@ export default function AliSawlyHome() {
           <span>Ali Sawly</span>
           <span className="text-xl md:text-3xl font-medium tracking-normal text-primary-text/40">علي صولي</span>
         </h1>
-        <p className="font-body text-xs md:text-sm lg:text-base tracking-[0.2em] md:tracking-[0.3em] text-text-secondary uppercase mb-16 md:mb-24">
-          Filmmaker & Director
+        <p className="font-body text-xs md:text-sm lg:text-base tracking-[0.2em] md:tracking-[0.3em] text-text-secondary uppercase mb-16 md:mb-24 flex flex-col items-center gap-1 md:gap-2">
+          <span>Filmmaker & Director</span>
+          <span className="text-[10px] md:text-xs tracking-normal text-text-secondary/60">مخرج وصانع أفلام لبناني</span>
         </p>
         
         {/* Navigation Links */}
@@ -46,9 +47,11 @@ export default function AliSawlyHome() {
           
           <Link 
             href="/baldatayba" 
-            className="text-primary-text border-b border-primary-text/20 hover:border-primary-text transition-colors duration-500 pb-1"
+            className="flex flex-col items-center gap-1 text-primary-text border-b border-primary-text/20 hover:border-primary-text transition-colors duration-500 pb-1"
+            title="مشروع تخرج: فيلم بلدةٌ طيبة - Graduation Documentary: Baladet Tayba"
           >
-            بلدةٌ طيبة (Film)
+            <span>بلدةٌ طيبة</span>
+            <span className="text-[10px] md:text-xs text-text-secondary tracking-normal">Graduation Documentary</span>
           </Link>
 
           {/* WhatsApp */}

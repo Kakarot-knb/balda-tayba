@@ -22,7 +22,7 @@ export default function HeroSection() {
               transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="mb-4 md:mb-6"
             >
-              <span className="font-body text-sm md:text-base font-medium text-deep-green">فيلم وثائقي</span>
+              <span className="font-body text-sm md:text-base font-medium text-deep-green">فيلم وثائقي للمخرج علي صولي</span>
             </motion.div>
 
             <motion.div
@@ -44,8 +44,11 @@ export default function HeroSection() {
               className="flex items-center gap-4 mb-8 md:mb-12"
             >
               {/* The Restrained Poppy Motif */}
-              <div className="w-[1px] h-8 bg-accent-red opacity-80" />
-              <span className="font-body text-sm md:text-base font-medium text-accent-red">مشروع تخرج</span>
+              <div className="w-[1px] h-10 bg-accent-red opacity-80" />
+              <div className="flex flex-col gap-1">
+                <span className="font-body text-sm md:text-base font-medium text-accent-red">مشروع تخرج سينمائي</span>
+                <span className="text-[10px] md:text-xs tracking-wider text-accent-red/70 uppercase">A graduation documentary by Ali Sawly</span>
+              </div>
             </motion.div>
 
             {/* Context Sentence */}
@@ -55,7 +58,7 @@ export default function HeroSection() {
               transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="font-body text-lg md:text-xl lg:text-2xl text-primary-text leading-[1.9] max-w-2xl"
             >
-              فيلم وثائقي يستكشف علاقة الإنسان بأرضه، وما يبقى منها في الذاكرة بعد أن يُقتلع منها.
+              فيلم وثائقي ومشروع تخرج سينمائي يستكشف علاقة الإنسان بأرضه، وما يبقى منها في الذاكرة بعد أن يُقتلع منها.
             </motion.p>
           </div>
 

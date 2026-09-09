@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import DocumentaryMediaFrame from '../DocumentaryMediaFrame';
 
 const concepts = [
@@ -47,9 +48,14 @@ export default function ConceptSection() {
           >
             {/* Top Anchor: Heading + Explanatory Text */}
             <div className="flex flex-col gap-8">
-              <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-text font-bold order-1 lg:order-none">
-                فكرة الفيلم
-              </h2>
+              <div className="flex flex-col gap-2 order-1 lg:order-none">
+                <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-text font-bold">
+                  فكرة الفيلم
+                </h2>
+                <p className="font-body text-sm md:text-base text-text-secondary/80">
+                  إخراج: <Link href="/" className="hover:text-primary-text border-b border-text-secondary/30 hover:border-primary-text transition-colors duration-500 pb-0.5">علي صولي</Link>
+                </p>
+              </div>
               
               {/* Image Column - Moves here on mobile */}
               <div className="w-full order-2 lg:hidden mt-4 mb-4">
@@ -57,7 +63,7 @@ export default function ConceptSection() {
                   <div className="relative w-full aspect-[2480/3508]">
                     <motion.img 
                       src="/images/poster.jpg" 
-                      alt="بلدة الطيبة — ملصق الفيلم" 
+                      alt="ملصق فيلم بلدةٌ طيبة للمخرج علي صولي" 
                       className="absolute inset-0 w-full h-full object-cover z-10" 
                     />
                   </div>
@@ -91,7 +97,7 @@ export default function ConceptSection() {
               <div className="relative w-full aspect-[2480/3508]">
                 <motion.img 
                   src="/images/poster.jpg" 
-                  alt="بلدة الطيبة — ملصق الفيلم" 
+                  alt="ملصق فيلم بلدةٌ طيبة للمخرج علي صولي" 
                   className="absolute inset-0 w-full h-full object-cover z-10" 
                   initial={{ scale: 1.04 }}
                   whileInView={{ scale: 1 }}
