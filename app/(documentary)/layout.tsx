@@ -18,8 +18,25 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "بلدةٌ طيبة — فيلم وثائقي",
-  description: "فيلم وثائقي يستكشف علاقة الإنسان بأرضه، من قرية الطيبة في جنوب لبنان. مشروع تخرّج سينمائي.",
+  metadataBase: new URL("https://alisawly.com"),
+  title: "بلدةٌ طيبة — فيلم وثائقي | Ali Sawly",
+  description: "فيلم وثائقي يستكشف علاقة الإنسان بأرضه، من قرية الطيبة في جنوب لبنان. مشروع تخرّج سينمائي للمخرج علي صولي (Ali Sawly).",
+  alternates: {
+    canonical: "/baldatayba",
+  },
+  openGraph: {
+    title: "بلدةٌ طيبة — فيلم وثائقي | Ali Sawly",
+    description: "فيلم وثائقي يستكشف علاقة الإنسان بأرضه، من قرية الطيبة في جنوب لبنان. مشروع تخرّج سينمائي للمخرج علي صولي (Ali Sawly).",
+    url: "https://alisawly.com/baldatayba",
+    siteName: "Ali Sawly",
+    locale: "ar_LB",
+    type: "video.movie",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "بلدةٌ طيبة — فيلم وثائقي | Ali Sawly",
+    description: "فيلم وثائقي يستكشف علاقة الإنسان بأرضه، من قرية الطيبة في جنوب لبنان. مشروع تخرّج سينمائي للمخرج علي صولي (Ali Sawly).",
+  },
 };
 
 export default function RootLayout({

@@ -16,8 +16,25 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Ali Sawly — Filmmaker / Director",
-  description: "Official professional portfolio of Filmmaker and Director Ali Sawly.",
+  metadataBase: new URL("https://alisawly.com"),
+  title: "Ali Sawly | علي صولي — Filmmaker & Director",
+  description: "Official professional portfolio of Lebanese filmmaker and director Ali Sawly (علي صولي).",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Ali Sawly | علي صولي — Filmmaker & Director",
+    description: "Official professional portfolio of Lebanese filmmaker and director Ali Sawly (علي صولي).",
+    url: "https://alisawly.com",
+    siteName: "Ali Sawly",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ali Sawly | علي صولي — Filmmaker & Director",
+    description: "Official professional portfolio of Lebanese filmmaker and director Ali Sawly (علي صولي).",
+  },
 };
 
 export default function HomeLayout({

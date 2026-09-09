@@ -3,13 +3,33 @@ import Link from "next/link";
 export default function AliSawlyHome() {
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-center px-6 bg-primary-bg text-primary-text relative">
+      {/* Structured Data (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Ali Sawly",
+            alternateName: "علي صولي",
+            url: "https://alisawly.com/",
+            jobTitle: "Filmmaker / Director",
+            description: "Official professional portfolio of Lebanese filmmaker and director Ali Sawly (علي صولي).",
+            sameAs: [
+              "https://www.instagram.com/_ali_sawly/"
+            ],
+          }),
+        }}
+      />
+
       {/* Central Identity */}
       <div className="flex flex-col items-center justify-center flex-grow text-center mt-12 md:mt-0">
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-light tracking-wide uppercase mb-4 md:mb-6">
-          Ali Sawly
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-light tracking-wide uppercase mb-4 md:mb-6 flex flex-col items-center gap-2 md:gap-4">
+          <span>Ali Sawly</span>
+          <span className="text-xl md:text-3xl font-medium tracking-normal text-primary-text/40">علي صولي</span>
         </h1>
         <p className="font-body text-xs md:text-sm lg:text-base tracking-[0.2em] md:tracking-[0.3em] text-text-secondary uppercase mb-16 md:mb-24">
-          Filmmaker / Director
+          Filmmaker & Director
         </p>
         
         {/* Navigation Links */}
