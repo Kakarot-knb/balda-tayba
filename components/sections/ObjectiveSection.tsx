@@ -100,7 +100,7 @@ export default function ObjectiveSection() {
                       {/* Number watermark */}
                       <span className={clsx(
                         "absolute -top-16 md:-top-[6.5rem] right-0 font-heading text-6xl md:text-8xl font-black select-none pointer-events-none z-0",
-                        obj.isSpecial ? "text-accent-red/5" : "text-white/5"
+                        obj.isSpecial ? "text-accent-red/20" : "text-white/10"
                       )}>
                         {obj.id}
                       </span>
