@@ -18,6 +18,32 @@ import FooterSection from "@/components/sections/FooterSection";
 export default function Home() {
   return (
     <main className="relative w-full min-h-screen overflow-x-hidden bg-primary-bg">
+      {/* Structured Data (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Movie",
+            name: "بلدةٌ طيبة",
+            alternateName: "Baladet Tayba",
+            director: {
+              "@type": "Person",
+              name: "Ali Sawly",
+              alternateName: "علي صولي",
+              url: "https://alisawly.com/",
+              sameAs: [
+                "https://www.instagram.com/_ali_sawly/"
+              ]
+            },
+            genre: "Documentary",
+            description: "فيلم وثائقي ومشروع تخرج سينمائي يستكشف علاقة الإنسان بأرضه، وما يبقى منها في الذاكرة بعد أن يُقتلع منها. إخراج علي صولي.",
+            url: "https://alisawly.com/baldatayba",
+            image: "https://alisawly.com/images/poster.jpg",
+            inLanguage: "ar"
+          }),
+        }}
+      />
       <HeroSection />
       <VideoSection />
       <ConceptSection />
