@@ -7,97 +7,47 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full min-h-[100svh] flex flex-col bg-primary-bg"
+      className="relative w-full min-h-[100svh] flex flex-col"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(10, 10, 10, 0.1), rgba(10, 10, 10, 0.3), var(--primary-bg, #0B0E11)), url('/images/tayba-landscape.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 w-full h-full flex flex-col justify-center relative z-10 pb-24 pt-16 lg:pt-0 lg:pb-0">
-        
-        {/* Two-Column Title Sequence */}
-        <div className="w-full max-w-7xl mx-auto flex flex-col-reverse lg:flex-row justify-center items-center h-full py-16 lg:py-0 gap-16 lg:gap-24">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 w-full flex-1 flex flex-col justify-center relative z-10 pb-24 pt-24 lg:pt-0 lg:pb-0">
+
+        {/* Centered Content */}
+        <div className="w-full max-w-5xl mx-auto flex flex-col justify-center items-center flex-1 z-20 relative px-4">
           
-          {/* Text Column (Right side in RTL) */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center items-start z-20 max-w-xl">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-4 md:mb-6"
-            >
-              <span className="font-body text-sm md:text-base font-medium text-deep-green">فيلم وثائقي للمخرج علي صولي</span>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-6 md:mb-8"
-            >
-              {/* Clean, elegant title to accompany the logo */}
-              <h1 className="font-heading text-5xl lg:text-7xl font-bold text-deep-green leading-[1.2]">
-                بلدةٌ طيبة
-              </h1>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-4 mb-8 md:mb-12"
-            >
-              {/* The Restrained Poppy Motif */}
-              <div className="w-[1px] h-10 bg-accent-red opacity-80" />
-              <div className="flex flex-col gap-1">
-                <span className="font-body text-sm md:text-base font-medium text-accent-red">مشروع تخرج سينمائي</span>
-                <span className="text-[10px] md:text-xs tracking-wider text-accent-red/70 uppercase">A graduation documentary by Ali Sawly</span>
-              </div>
-            </motion.div>
-
-            {/* Context Sentence */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="font-body text-lg md:text-xl lg:text-2xl text-primary-text leading-[1.9] max-w-2xl"
-            >
-              فيلم وثائقي ومشروع تخرج سينمائي يستكشف علاقة الإنسان بأرضه، وما يبقى منها في الذاكرة بعد أن يُقتلع منها.
-            </motion.p>
-          </div>
-
-          {/* Logo Column (Left side in RTL) */}
+          {/* Logo Container */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full lg:w-1/2 h-[40vh] lg:h-[70vh] relative flex justify-center lg:justify-end items-center"
+            transition={{ duration: 2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-[20vh] lg:h-[30vh] max-w-sm lg:max-w-md relative flex justify-center items-center mb-6 lg:mb-10"
           >
-            <div className="relative w-full h-full">
-              <Image 
-                src="/images/logo.svg" 
-                alt="بلدةٌ طيبة Logo" 
-                fill 
-                className="object-contain lg:object-left drop-shadow-2xl opacity-100"
-                priority
-              />
-            </div>
+            <Image 
+              src="/images/headerlogo.PNG" 
+              alt="بلدةٌ طيبة Logo" 
+              fill 
+              className="object-contain object-center drop-shadow-2xl opacity-100"
+              priority
+            />
           </motion.div>
 
+          {/* Slogan */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="font-body text-xl lg:text-2xl xl:text-3xl text-white leading-[1.8] text-center max-w-3xl drop-shadow-md"
+          >
+            فيلم وثائقي ومشروع تخرج سينمائي يستكشف علاقة الإنسان بأرضه، وما يبقى منها في الذاكرة بعد أن يُقتلع منها.
+          </motion.p>
+          
         </div>
       </div>
-      
-      {/* Quiet scroll transition indicator at bottom center */}
-      <motion.div 
-        className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1.5 }}
-      >
-        <div className="w-[1px] h-20 bg-deep-green/10 relative overflow-hidden">
-          <motion.div 
-            className="w-full h-full bg-deep-green/30"
-            animate={{ opacity: [0.2, 0.6, 0.2] }}
-            transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

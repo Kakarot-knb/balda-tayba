@@ -70,41 +70,47 @@ export default function Navigation() {
     <>
       <header
         className={clsx(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-editorial py-6 md:py-8 pointer-events-none',
-          isHidden && !mobileMenuOpen ? '-translate-y-full' : 'translate-y-0',
-          mobileMenuOpen ? 'bg-transparent' : 'bg-gradient-to-b from-primary-bg via-primary-bg/90 to-transparent'
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-editorial px-4 pt-4 md:px-6 md:pt-6 pointer-events-none',
+          isHidden && !mobileMenuOpen ? '-translate-y-full' : 'translate-y-0'
         )}
       >
-        <div className="container mx-auto px-6 md:px-12 flex justify-end lg:justify-center items-center pointer-events-auto">
+        <div className={clsx(
+          "container mx-auto max-w-7xl px-4 py-2.5 md:px-6 md:py-3 flex justify-end lg:justify-center items-center pointer-events-auto rounded-full transition-colors duration-500",
+          mobileMenuOpen ? 'bg-transparent' : 'bg-deep-green shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/5'
+        )}>
           
           {/* Desktop Nav */}
           <motion.nav 
-            className="hidden lg:flex flex-wrap justify-center items-center gap-6 xl:gap-8 max-w-5xl mx-auto"
+            className="hidden lg:flex flex-nowrap justify-center items-center gap-2 xl:gap-4 max-w-none mx-auto w-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             {navLinks.map((link) => (
-              <button
+              <motion.button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className="font-body text-sm xl:text-base font-medium text-primary-text hover:text-accent-red transition-colors duration-300 whitespace-nowrap"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="font-body text-xs lg:text-sm xl:text-base font-medium text-white hover:bg-white/10 px-2 lg:px-3 py-1.5 rounded-lg transition-colors duration-300 whitespace-nowrap"
               >
                 {link.name}
-              </button>
+              </motion.button>
             ))}
           </motion.nav>
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="lg:hidden text-primary-text z-50 p-2 -mr-2"
+            className="lg:hidden text-white hover:bg-white/10 rounded-lg z-50 p-2 -mr-2 transition-colors duration-300"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.95 }}
             aria-label="القائمة"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            {mobileMenuOpen ? <X size={28} className="text-primary-bg" /> : <Menu size={28} />}
+            {mobileMenuOpen ? <X size={28} className="text-white" /> : <Menu size={28} className="text-white" />}
           </motion.button>
         </div>
       </header>
@@ -117,7 +123,7 @@ export default function Navigation() {
             animate={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
             exit={{ opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-deep-green text-primary-bg overflow-y-auto overflow-x-hidden"
+            className="fixed inset-0 z-40 bg-deep-green text-white overflow-y-auto overflow-x-hidden"
           >
             <div className="min-h-full flex flex-col justify-center px-6 py-24 md:px-12 w-full max-w-full">
               <nav className="flex flex-col gap-2 w-full max-w-sm mx-auto">
@@ -128,7 +134,7 @@ export default function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + index * 0.04, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => scrollTo(link.id)}
-                    className="text-right text-2xl md:text-3xl lg:text-4xl font-heading text-primary-bg/90 hover:text-accent-red transition-colors w-full py-4 border-b border-primary-bg/10 min-h-[56px] flex items-center justify-end"
+                    className="text-right text-2xl md:text-3xl lg:text-4xl font-heading text-white hover:bg-white/10 transition-colors w-full py-4 px-4 rounded border-b border-white/10 min-h-[56px] flex items-center justify-end"
                   >
                     {link.name}
                   </motion.button>

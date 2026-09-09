@@ -147,7 +147,7 @@ export default function VisionSection() {
 
         {/* Subsection 4 - Symbolism */}
         <motion.article 
-          className="grid grid-cols-1 md:grid-cols-[1fr_2.5fr] gap-6 md:gap-16 py-12 md:py-20 border-y border-text-secondary/10"
+          className="grid grid-cols-1 md:grid-cols-[1fr_2.5fr] gap-6 md:gap-16 py-12 md:py-20 border-t border-text-secondary/10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

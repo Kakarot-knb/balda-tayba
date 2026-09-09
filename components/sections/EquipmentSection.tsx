@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Camera, Aperture, Mic, SunMedium, Move3d } from 'lucide-react';
+import MagicBento from '../MagicBento';
 
 const equipment = [
   {
@@ -46,6 +47,32 @@ const equipment = [
 ];
 
 export default function EquipmentSection() {
+  const bentoCards = equipment.map((item) => {
+    const Icon = item.icon;
+    return {
+      color: '#1E2B22',
+      label: (
+        <div className="flex items-center gap-3">
+          <div className="p-2 rounded-full bg-[#2A3C30] text-[#8CB39B] border border-[#8CB39B]/20">
+            <Icon className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
+          </div>
+          <span className="font-heading text-lg md:text-xl text-primary-bg font-bold">
+            {item.category}
+          </span>
+        </div>
+      ),
+      description: (
+        <div className="flex flex-col gap-1 md:gap-2 mt-4">
+          {item.items.map((val, idx) => (
+            <div key={idx} className="font-body text-base md:text-lg text-primary-bg/75 font-light text-right" dir="ltr">
+              {val}
+            </div>
+          ))}
+        </div>
+      )
+    };
+  });
+
   return (
     <section id="equipment" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-primary-bg border-t border-text-secondary/5">
       <div className="container mx-auto max-w-5xl">
@@ -59,39 +86,26 @@ export default function EquipmentSection() {
           المواد المستخدمة
         </motion.h2>
 
-        <div className="border-y border-text-secondary/20">
-          <div className="grid grid-cols-1 divide-y divide-text-secondary/10">
-            {equipment.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div 
-                  key={index}
-                  className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-4 py-8 md:py-10"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-full bg-deep-green/5 text-deep-green border border-deep-green/10">
-                      <Icon className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.5} />
-                    </div>
-                    <div className="font-heading text-lg md:text-xl text-primary-text font-bold">
-                      {item.category}
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-1 md:gap-2">
-                    {item.items.map((val, idx) => (
-                      <div key={idx} className="font-body text-base md:text-lg text-text-secondary font-light text-right" dir="ltr">
-                        {val}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <MagicBento
+            cards={bentoCards}
+            textAutoHide={false}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            enableTilt={false}
+            enableMagnetism={true}
+            clickEffect={true}
+            spotlightRadius={300}
+            particleCount={8}
+            glowColor="140, 179, 155"
+          />
+        </motion.div>
       </div>
     </section>
   );

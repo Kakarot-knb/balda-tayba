@@ -11,25 +11,7 @@ export default function VideoSection() {
     >
       <div className="layout-container">
         
-        {/* Editorial Header */}
-        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16 flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <h2 className="font-heading text-[clamp(3rem,8vw,6rem)] lg:text-8xl font-bold text-primary-text leading-[1.1] tracking-tight">
-              بلدةٌ طيبة
-            </h2>
-            
-            <div className="flex items-center justify-center gap-6 mt-8">
-              <div className="w-12 h-[1px] bg-text-secondary/20" />
-              <span className="font-body text-sm md:text-base font-medium text-text-secondary/80">فيلم وثائقي — مشروع تخرج</span>
-              <div className="w-12 h-[1px] bg-text-secondary/20" />
-            </div>
-          </motion.div>
-        </div>
+
 
         {/* Cinematic Vimeo Player in Physical Frame */}
         <motion.div

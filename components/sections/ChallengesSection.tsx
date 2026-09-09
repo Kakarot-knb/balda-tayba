@@ -43,36 +43,42 @@ const challenges = [
 
 export default function ChallengesSection() {
   return (
-    <section id="challenges" className="w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green border-t border-primary-bg/10 arc-t arc-b">
-      <div className="container mx-auto max-w-7xl">
-        <motion.h2 
-          className="font-heading text-[clamp(2.5rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-bg font-bold mb-12 md:mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          التحديات وعقبات الإنتاج
-        </motion.h2>
+    <section id="challenges" className="w-full relative">
+      {/* Background blend layer: Top half matches previous section (primary-bg), bottom half matches next section (surface) */}
+      <div className="absolute top-0 inset-x-0 h-1/2 bg-primary-bg" />
+      <div className="absolute bottom-0 inset-x-0 h-1/2 bg-surface" />
+      
+      <div className="relative w-full py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-deep-green border-t border-primary-bg/10 arc-t arc-b">
+        <div className="container mx-auto max-w-7xl">
+          <motion.h2 
+            className="font-heading text-[clamp(2.5rem,6vw,4rem)] md:text-5xl lg:text-6xl text-primary-bg font-bold mb-12 md:mb-16 lg:mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            التحديات وعقبات الإنتاج
+          </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
-          {challenges.map((challenge, index) => (
-            <motion.div 
-              key={index}
-              className="flex flex-col gap-3"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-            >
-              <h3 className="font-heading text-xl md:text-2xl text-primary-bg font-bold">
-                {challenge.title}
-              </h3>
-              <p className="font-body text-base md:text-lg text-primary-bg/75 font-light leading-relaxed">
-                {challenge.desc}
-              </p>
-            </motion.div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+            {challenges.map((challenge, index) => (
+              <motion.div 
+                key={index}
+                className="flex flex-col gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+              >
+                <h3 className="font-heading text-xl md:text-2xl text-primary-bg font-bold">
+                  {challenge.title}
+                </h3>
+                <p className="font-body text-base md:text-lg text-primary-bg/75 font-light leading-relaxed">
+                  {challenge.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -25,8 +25,8 @@ const config: Config = {
         'editorial': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
       fontFamily: {
-        heading: ['var(--font-noto-kufi)'],
-        body: ['var(--font-cairo)'],
+        heading: ['var(--font-mandisa)', 'sans-serif'],
+        body: ['var(--font-mandisa)', 'sans-serif'],
       }
     },
   },
