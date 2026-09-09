@@ -16,7 +16,8 @@ export default function AliSawlyHome() {
             jobTitle: "Filmmaker / Director",
             description: "Official professional portfolio of Lebanese filmmaker and director Ali Sawly (علي صولي).",
             sameAs: [
-              "https://www.instagram.com/_ali_sawly/"
+              "https://www.instagram.com/_ali_sawly/",
+              "https://www.facebook.com/ali.sawly.2025"
             ],
           }),
         }}
@@ -43,6 +44,14 @@ export default function AliSawlyHome() {
             className="text-text-secondary hover:text-primary-text transition-colors duration-500 pb-1"
           >
             Instagram
+          </a>
+          <a 
+            href="https://www.facebook.com/ali.sawly.2025" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-text-secondary hover:text-primary-text transition-colors duration-500 pb-1"
+          >
+            Facebook
           </a>
           
           <Link 

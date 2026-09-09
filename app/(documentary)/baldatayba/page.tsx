@@ -33,7 +33,8 @@ export default function Home() {
               alternateName: "علي صولي",
               url: "https://alisawly.com/",
               sameAs: [
-                "https://www.instagram.com/_ali_sawly/"
+                "https://www.instagram.com/_ali_sawly/",
+                "https://www.facebook.com/ali.sawly.2025"
               ]
             },
             genre: "Documentary",
