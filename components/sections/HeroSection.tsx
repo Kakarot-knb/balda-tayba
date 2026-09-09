@@ -25,7 +25,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             transition={{ duration: 2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full h-[20vh] lg:h-[30vh] max-w-sm lg:max-w-md relative flex justify-center items-center mb-6 lg:mb-10"
+            className="w-[85%] md:w-[70%] max-w-[500px] h-[120px] md:h-[160px] lg:h-[200px] relative flex justify-center items-center mb-8 lg:mb-10 mx-auto"
           >
             <Image 
               src="/images/headerlogo.PNG" 

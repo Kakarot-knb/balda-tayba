@@ -75,7 +75,7 @@ export default function Navigation() {
         )}
       >
         <div className={clsx(
-          "container mx-auto max-w-7xl px-4 py-2.5 md:px-6 md:py-3 flex justify-end lg:justify-center items-center pointer-events-auto rounded-full transition-colors duration-500",
+          "mx-auto w-full lg:w-fit px-4 py-2.5 md:px-6 md:py-3 flex justify-end lg:justify-center items-center pointer-events-auto rounded-full transition-colors duration-500",
           mobileMenuOpen ? 'bg-transparent' : 'bg-deep-green shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/5'
         )}>
           
