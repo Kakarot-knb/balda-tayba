@@ -37,8 +37,8 @@ export default function ConceptSection() {
                 <DocumentaryMediaFrame className="w-full">
                   <div className="relative w-full aspect-[2480/3508]">
                     <motion.img 
-                      src="/images/poster.jpg" 
-                      alt="ملصق فيلم بلدةٌ طيبة للمخرج علي صولي" 
+                      src="/images/tayba-mosque.jpg" 
+                      alt="بلدةٌ طيبة - المسجد" 
                       className="absolute inset-0 w-full h-full object-cover z-10" 
                     />
                   </div>
@@ -62,8 +62,8 @@ export default function ConceptSection() {
             <DocumentaryMediaFrame className="w-full h-full">
               <div className="relative w-full aspect-[2480/3508]">
                 <motion.img 
-                  src="/images/poster.jpg" 
-                  alt="ملصق فيلم بلدةٌ طيبة للمخرج علي صولي" 
+                  src="/images/tayba-mosque.jpg" 
+                  alt="بلدةٌ طيبة - المسجد" 
                   className="absolute inset-0 w-full h-full object-cover z-10" 
                   initial={{ scale: 1.04 }}
                   whileInView={{ scale: 1 }}

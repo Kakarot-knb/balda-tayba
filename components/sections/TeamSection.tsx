@@ -8,6 +8,7 @@ const team = [
   { role: 'التصوير والمونتاج', name: 'Mohammad Radi' },
   { role: 'الذكاء الاصطناعي', name: 'Khalil Sammour' },
   { role: 'تصميم الملصق', name: 'Mohammad Ali Karaki' },
+  { role: 'منسقة ديكور', name: 'Jana Sawly' },
   { role: 'تطوير الموقع', name: 'Mohamad Karanbash' },
 ];
 

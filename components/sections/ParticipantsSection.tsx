@@ -19,8 +19,8 @@ const chromaItems = participants.map(p => ({
   image: p.image,
   title: p.name,
   subtitle: p.role,
-  borderColor: 'rgba(255, 255, 255, 0.1)',
-  gradient: 'linear-gradient(145deg, #1A1D1C, #0a0504)'
+  borderColor: 'rgba(0, 0, 0, 0.8)',
+  gradient: 'linear-gradient(145deg, #1E2B22, #0a0f0c)'
 }));
 
 export default function ParticipantsSection() {
