@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     title: "بلدةٌ طيبة — فيلم وثائقي | Ali Sawly",
     description: "فيلم وثائقي يستكشف علاقة الإنسان بأرضه، من قرية الطيبة في جنوب لبنان. مشروع تخرّج سينمائي للمخرج علي صولي (Ali Sawly).",
   },
+  icons: {
+    icon: "/images/urlogo.jpg",
+  },
 };
 
 export default function RootLayout({

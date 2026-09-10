@@ -4,32 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import DocumentaryMediaFrame from '../DocumentaryMediaFrame';
 
-const concepts = [
-  {
-    title: 'الرمزية والهوية',
-    content: 'دحض أسطورة "عشتار وأدونيس" وإثبات أن وردة شقائق النعمان في الطيبة لم تنبت من أساطير القدماء، بل نبتت من دماء شهدائها الفعليين، لِتتحول بتلاتها في المشاهد الملحمية إلى قذائف تصهر آليات العدو (الميركافا).'
-  },
-  {
-    title: 'العمق القرآني',
-    content: 'الربط بين اسم الضيعة "الطيبة" والجذر القرآني (الطيب) المذكور 50 مرة في القرآن الكريم ({الْكَلِمَةِ الطَّيِّبَةِ}، {الشَّجَرَةِ الطَّيِّبَةِ}، {الْمَسَاكِنِ الطَّيِّبَةِ}، و{بَلْدَةٌ طَيِّبَةٌ وَرَبٌّ غَفُورٌ}).'
-  },
-  {
-    title: 'صوت الشريط الحدودي',
-    content: 'نقل صرخة أهالي الجنوب الذين عانوا من التهجير وحُرِموا الاستقرار والحياة الطبيعية بعيداً عن منازلهم لأكثر من 3 سنوات.'
-  },
-  {
-    title: 'التضحية والصمود الإنساني',
-    content: 'توثيق قصص واقعية تُجسد العناد والوفاء للأرض (قصص الشهداء والنازحين).'
-  },
-  {
-    title: 'حتمية العودة والنصر',
-    content: 'إيصال رسالة قاطعة بأن تدمير الحجر لا يمحو الحق، وأن الركام والدمار ليسا إلا "مخاضاً عسيراً" يسبق العودة الحتمية لإنبات الأرض وبنائها من جديد.'
-  },
-  {
-    title: 'زهرة الجنوب الشهيدة فاطمة فتوني',
-    content: 'تجسيد فاطمة كـ "دحنونة الطيبة وزهرة الجنوب" التي سقطت من يد والدها، لا لتموت، بل لتتحول بتلاتها إلى قوة وقذيفة تدك دبابات "الميركافا" وتصنع النصر.'
-  }
-];
+import { AccordionMultiLevel } from '../ui/accordion-multi-level';
 
 export default function ConceptSection() {
   return (
@@ -70,17 +45,8 @@ export default function ConceptSection() {
                 </DocumentaryMediaFrame>
               </div>
 
-              <div className="flex flex-col gap-5 md:gap-6 max-w-2xl order-3 lg:order-none">
-                {concepts.map((concept, idx) => (
-                  <div key={idx} className="flex flex-col gap-1 md:gap-2">
-                    <h3 className="font-heading text-lg md:text-xl text-primary-text font-bold">
-                      {concept.title}
-                    </h3>
-                    <p className="font-body text-base md:text-lg leading-relaxed text-text-secondary font-light">
-                      {concept.content}
-                    </p>
-                  </div>
-                ))}
+              <div className="flex flex-col max-w-2xl order-3 lg:order-none w-full">
+                <AccordionMultiLevel />
               </div>
             </div>
           </motion.div>

@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     title: "Ali Sawly | علي صولي — Filmmaker & Director",
     description: "Official professional portfolio of Lebanese filmmaker and director Ali Sawly (علي صولي).",
   },
+  icons: {
+    icon: "/images/urlogo.jpg",
+  },
 };
 
 export default function HomeLayout({

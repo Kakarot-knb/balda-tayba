@@ -19,7 +19,7 @@ const outroText = `«فَبِيَدِ اللَّهِ يَسْقُط».. وَمَ
 أَرْضُنَا تَلْفِظُ الغَاصِبَ كَمَا يَلْفِظُ اليَمُّ خَبَثَه.. وَتَحْتَضِنُ دِمَاءَنَا كَمَا يَحْتَضِنُ القَلْبُ نَبْضَه.
 وَلَئِنْ سَاوَى العَدُوُّ مَعَالِمَنَا بِالتُّرَاب.. وَلَمْ يُبْقِ حَجَرًا عَلَى حَجَرٍ فِي تِلْكَ الرِّهَاب..
 سَنَعُودُ إِلَيْهَا! فَنَحْنُ لِجَدْبِهَا المَطَر.. وَنَحْنُ فِي عُرُوقِهَا الشَّجَر!
-خُطَانَا إِلَيْكِ مَقْضِيَّة.. وَحُقُوقُنَا فِيكِ حَتْمِيَّة.
+خُطَانَا إِلَيْكِ مَقْضِيَّة وَحُقُوقُنَا فِيكِ حَتْمِيَّة.
 عَائِدُونَ قَوَافِلَ نُور.. سَادَةً نَبْنِي القُصُور.. أَوْ شُهَدَاءَ نُعَانِقُ القُبُور.
 لِتَتَنَفَّسَ الأَرْضُ نَصْرَهَا، بَعْدَ مَخَاضِهَا العَسِير.. وَتُتَوَّجَ رُكَامَاتُهَا بِآيَةِ المَصِير: {بَلْدَةٌ طَيِّبَةٌ وَرَبٌّ غَفُورٌ}.`;
 
@@ -167,30 +167,34 @@ export default function ScriptsSection() {
       {/* Archival Modal */}
       <AnimatePresence>
         {activeModal && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-8 lg:p-12 overflow-hidden">
+          <div className="fixed inset-0 z-[100] overflow-y-auto">
             {/* Dark Cinematic Backdrop */}
             <motion.div 
-              className="absolute inset-0 bg-deep-green/90 backdrop-blur-sm"
+              className="fixed inset-0 bg-deep-green/90 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              onClick={() => setActiveModal(null)}
             />
             
-            {/* The Document */}
-            <motion.div
-              className="relative w-full max-w-4xl max-h-[calc(100svh-1rem)] md:max-h-[calc(100svh-4rem)] overflow-y-auto rounded-sm shadow-2xl flex flex-col"
-              style={{ 
-                backgroundColor: '#F4F1EA',
-                backgroundImage: PAPER_TEXTURE,
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0,0,0,0.05)'
-              }}
-              initial={{ opacity: 0, y: 100, rotateX: 5 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              exit={{ opacity: 0, y: 40, scale: 0.98 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            {/* Scrollable Wrapper */}
+            <div 
+              className="min-h-full w-full flex items-center justify-center p-4 md:p-8 lg:p-12 relative z-10 cursor-pointer"
+              onClick={() => setActiveModal(null)}
             >
+              {/* The Document */}
+              <motion.div
+                className="relative w-full max-w-4xl rounded-sm shadow-2xl flex flex-col bg-[#F4F1EA] cursor-auto my-auto"
+                style={{ 
+                  backgroundImage: PAPER_TEXTURE,
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0,0,0,0.05)'
+                }}
+                initial={{ opacity: 0, y: 100, rotateX: 5 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                exit={{ opacity: 0, y: 40, scale: 0.98 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                onClick={(e) => e.stopPropagation()}
+              >
               
               {/* Archival Header / Metadata */}
               <div className="sticky top-0 bg-[#F4F1EA]/95 backdrop-blur-md border-b border-[#2C2C2A]/10 px-4 md:px-6 py-4 flex justify-between items-center z-50">
@@ -240,6 +244,7 @@ export default function ScriptsSection() {
               </div>
 
             </motion.div>
+            </div>
           </div>
         )}
       </AnimatePresence>

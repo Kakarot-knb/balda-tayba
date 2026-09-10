@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import clsx from 'clsx';
 
+import Image from 'next/image';
+
 const navLinks = [
   { name: 'فكرة الفيلم', id: 'concept' },
   { name: 'الهدف', id: 'objective' },
@@ -75,9 +77,25 @@ export default function Navigation() {
         )}
       >
         <div className={clsx(
-          "mx-auto w-full lg:w-fit px-4 py-2.5 md:px-6 md:py-3 flex justify-end lg:justify-center items-center pointer-events-auto rounded-full transition-colors duration-500",
+          "mx-auto w-full lg:w-fit px-4 py-2.5 md:px-6 md:py-3 flex justify-between lg:justify-center items-center pointer-events-auto rounded-full transition-colors duration-500",
           mobileMenuOpen ? 'bg-transparent' : 'bg-deep-green shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/5'
         )}>
+          
+          {/* Mobile Logo */}
+          <motion.div 
+            className="lg:hidden relative h-7 w-28 md:h-8 md:w-32 mr-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <Image 
+              src="/images/headerlogo.PNG" 
+              alt="بلدةٌ طيبة Logo" 
+              fill 
+              className="object-contain object-right"
+              priority
+            />
+          </motion.div>
           
           {/* Desktop Nav */}
           <motion.nav 
