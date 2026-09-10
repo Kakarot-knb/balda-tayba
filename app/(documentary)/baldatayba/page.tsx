@@ -9,7 +9,6 @@ import ChallengesSection from "@/components/sections/ChallengesSection";
 import ParticipantsSection from "@/components/sections/ParticipantsSection";
 import ScriptsSection from "@/components/sections/ScriptsSection";
 import EquipmentSection from "@/components/sections/EquipmentSection";
-import CinematicStyleSection from "@/components/sections/CinematicStyleSection";
 import AISection from "@/components/sections/AISection";
 import TeamSection from "@/components/sections/TeamSection";
 import DedicationSection from "@/components/sections/DedicationSection";
@@ -56,7 +55,6 @@ export default function Home() {
       <ParticipantsSection />
       <ScriptsSection />
       <EquipmentSection />
-      <CinematicStyleSection />
       <AISection />
       <TeamSection />
       <DedicationSection />

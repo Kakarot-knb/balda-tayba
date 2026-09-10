@@ -48,10 +48,10 @@
 @layer components {
   /* Typography System */
   .type-film-title {
-    @apply font-heading text-[clamp(4rem,10vw,8rem)] md:text-8xl lg:text-[9rem] font-bold text-primary-text leading-[1.1] tracking-tight;
+    @apply font-heading text-[clamp(2.5rem,10vw,8rem)] md:text-8xl lg:text-[9rem] font-bold text-primary-text leading-[1.1] tracking-tight;
   }
   .type-display {
-    @apply font-heading text-[clamp(2.5rem,6vw,4rem)] md:text-6xl lg:text-[5rem] font-bold text-primary-text leading-tight;
+    @apply font-heading text-[clamp(2rem,6vw,4rem)] md:text-6xl lg:text-[5rem] font-bold text-primary-text leading-tight;
   }
   .type-h1 {
     @apply font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-primary-text leading-tight;

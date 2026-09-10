@@ -17,12 +17,12 @@ const navLinks = [
   { name: 'الشخصيات', id: 'participants' },
   { name: 'التعليق والنصوص', id: 'voice-scripts' },
   { name: 'المعدات', id: 'equipment' },
-  { name: 'الأسلوب', id: 'style' },
   { name: 'فريق العمل', id: 'team' },
 ];
 
 export default function Navigation() {
   const [isHidden, setIsHidden] = useState(false);
+  const [isNavHovered, setIsNavHovered] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Scroll lock for mobile menu
@@ -73,13 +73,17 @@ export default function Navigation() {
       <header
         className={clsx(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-editorial px-4 pt-4 md:px-6 md:pt-6 pointer-events-none',
-          isHidden && !mobileMenuOpen ? '-translate-y-full' : 'translate-y-0'
+          isHidden && !isNavHovered && !mobileMenuOpen ? '-translate-y-full' : 'translate-y-0'
         )}
       >
-        <div className={clsx(
-          "mx-auto w-full lg:w-fit px-4 py-2.5 md:px-6 md:py-3 flex justify-between lg:justify-center items-center pointer-events-auto rounded-full transition-colors duration-500",
-          mobileMenuOpen ? 'bg-transparent' : 'bg-deep-green shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/5'
-        )}>
+        <div 
+          onMouseEnter={() => setIsNavHovered(true)}
+          onMouseLeave={() => setIsNavHovered(false)}
+          className={clsx(
+            "mx-auto w-full lg:w-fit px-4 py-2.5 md:px-6 md:py-3 flex justify-between lg:justify-center items-center pointer-events-auto rounded-full transition-colors duration-500",
+            mobileMenuOpen ? 'bg-transparent' : 'bg-deep-green shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/5'
+          )}
+        >
           
           {/* Mobile Logo */}
           <motion.div 
@@ -143,7 +147,7 @@ export default function Navigation() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-40 bg-deep-green text-white overflow-y-auto overflow-x-hidden"
           >
-            <div className="min-h-full flex flex-col justify-center px-6 py-24 md:px-12 w-full max-w-full">
+            <div className="min-h-full flex flex-col justify-center px-6 py-12 md:py-24 md:px-12 w-full max-w-full">
               <nav className="flex flex-col gap-2 w-full max-w-sm mx-auto">
                 {navLinks.map((link, index) => (
                   <motion.button

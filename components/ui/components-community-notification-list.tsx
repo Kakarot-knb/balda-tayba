@@ -68,14 +68,14 @@ export function CinematicGoalStack() {
         // For mobile support
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <div className="relative w-full h-[220px] md:h-[240px]">
+        <div className="relative w-full h-[250px] md:h-[240px]">
           {goals.map((goal, index) => {
             const isTop = index === 0;
             const Icon = goal.icon;
             
             // Calculate stacking values
             const scale = isExpanded ? 1 : 1 - index * 0.05;
-            const y = isExpanded ? index * 210 : index * 16;
+            const y = isExpanded ? index * 220 : index * 16;
             const zIndex = goals.length - index;
             const opacity = isExpanded ? 1 : (1 - index * 0.15);
 
@@ -147,7 +147,7 @@ export function CinematicGoalStack() {
         {/* Helper bottom spacer when expanded so content below doesn't get covered instantly */}
         <motion.div 
           initial={false}
-          animate={{ height: isExpanded ? (goals.length - 1) * 210 : 0 }}
+          animate={{ height: isExpanded ? (goals.length - 1) * 220 : 0 }}
           transition={{
             type: "spring",
             stiffness: 300,

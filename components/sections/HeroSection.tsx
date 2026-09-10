@@ -15,7 +15,7 @@ export default function HeroSection() {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 w-full flex-1 flex flex-col justify-center relative z-10 pb-24 pt-24 lg:pt-0 lg:pb-0">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 w-full flex-1 flex flex-col justify-center relative z-10 pt-16 pb-16 md:pt-24 md:pb-24 lg:pt-0 lg:pb-0">
 
         {/* Centered Content */}
         <div className="w-full max-w-5xl mx-auto flex flex-col justify-center items-center flex-1 z-20 relative px-4">
@@ -25,7 +25,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             transition={{ duration: 2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-[85%] md:w-[70%] max-w-[500px] h-[120px] md:h-[160px] lg:h-[200px] relative flex justify-center items-center mb-8 lg:mb-10 mx-auto"
+            className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] aspect-[25/8] relative flex justify-center items-center mb-8 lg:mb-10 mx-auto"
           >
             <Image 
               src="/images/headerlogo.PNG" 

@@ -33,7 +33,7 @@ export default function ConceptSection() {
               </div>
               
               {/* Image Column - Moves here on mobile */}
-              <div className="w-full order-2 lg:hidden mt-4 mb-4">
+              <div className="w-full max-w-sm mx-auto order-2 lg:hidden mt-4 mb-4">
                 <DocumentaryMediaFrame className="w-full">
                   <div className="relative w-full aspect-[2480/3508]">
                     <motion.img 

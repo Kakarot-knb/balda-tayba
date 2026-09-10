@@ -21,7 +21,7 @@ export default function ObjectiveSection() {
 
         {/* Major Typographic Moment / Blockquote */}
         <motion.div 
-          className="flex justify-center mt-32 md:mt-48 pt-16 md:pt-24 border-t border-accent-gold/10 px-4 relative"
+          className="flex justify-center mt-20 md:mt-32 lg:mt-48 pt-12 md:pt-16 lg:pt-24 border-t border-accent-gold/10 px-4 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -31,7 +31,7 @@ export default function ObjectiveSection() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-accent-red/5 blur-[100px] pointer-events-none rounded-full" />
           
           <blockquote className="font-heading text-[clamp(1.75rem,5vw,4rem)] md:text-5xl lg:text-7xl text-primary-bg font-bold text-center leading-[2.5] md:leading-[3] max-w-4xl relative z-10">
-            <span className="text-accent-red/80">&ldquo;</span>خُطَانَا إِلَيْكِ مَقْضِيَّة<span className="hidden md:inline"> </span><br className="md:hidden" />وَحُقُوقُنَا فِيكِ حَتْمِيَّة.<span className="text-accent-red/80">&rdquo;</span>
+            <span className="text-accent-red/80">&rdquo;</span>خُطَانَا إِلَيْكِ مَقْضِيَّة<span className="hidden md:inline"> </span><br className="md:hidden" />وَحُقُوقُنَا فِيكِ حَتْمِيَّة.<span className="text-accent-red/80">&ldquo;</span>
           </blockquote>
         </motion.div>
 

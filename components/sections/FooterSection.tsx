@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function FooterSection() {
   return (
-    <section className="w-full pt-24 pb-24 md:pt-32 md:pb-32 lg:pt-48 lg:pb-48 px-4 md:px-6 lg:px-12 bg-deep-green text-primary-bg flex flex-col items-center justify-center min-h-[50vh] md:min-h-[60vh] text-center overflow-hidden relative">
+    <section className="w-full pt-16 pb-16 md:pt-24 md:pb-24 lg:pt-48 lg:pb-48 px-4 md:px-6 lg:px-12 bg-deep-green text-primary-bg flex flex-col items-center justify-center min-h-[50vh] md:min-h-[60vh] text-center overflow-hidden relative">
       
       {/* Decorative Poppy Left */}
       <motion.div
@@ -18,16 +18,6 @@ export default function FooterSection() {
         <img src="/images/poppy/2.png" alt="Poppy Flower" className="w-full h-auto object-contain drop-shadow-2xl scale-x-[-1]" />
       </motion.div>
 
-      {/* Decorative Poppy Right */}
-      <motion.div
-        className="absolute bottom-0 right-0 w-72 md:w-[28rem] pointer-events-none translate-x-1/4 translate-y-[40%] rotate-[15deg] z-0 opacity-80"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.8 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-      >
-        <img src="/images/poppy/2.png" alt="Poppy Flower" className="w-full h-auto object-contain drop-shadow-2xl" />
-      </motion.div>
 
       {/* Final Logo Signature */}
       <motion.div
