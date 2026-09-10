@@ -80,9 +80,15 @@ const Masonry = ({
   colorShiftOnHover = false
 }: MasonryProps) => {
   const columns = useMedia(
-    ['(min-width:1500px)', '(min-width:1000px)', '(min-width:600px)', '(min-width:400px)'],
-    [5, 4, 3, 2],
-    1
+    ['(min-width:1500px)', '(min-width:1000px)', '(min-width:600px)', '(max-width:599px)'],
+    [5, 4, 3, 2], // Wait, mobile often needs 1 column, but 2 looks good if items aren't too narrow. Let's make it responsive.
+    2
+  );
+  // Correctly mapping breakpoints to column counts to avoid narrow images:
+  const actualColumns = useMedia(
+    ['(min-width:2560px)', '(min-width:1920px)', '(min-width:1280px)', '(min-width:1024px)', '(min-width:768px)', '(min-width:480px)'],
+    [6, 5, 4, 3, 2, 2],
+    1 // default for mobile < 480px is 1 column
   );
 
   const [containerRef, { width }] = useMeasure();
@@ -125,25 +131,29 @@ const Masonry = ({
   const grid = useMemo(() => {
     if (!width) return [];
 
-    const colHeights = new Array(columns).fill(0);
-    const columnWidth = width / columns;
+    const colHeights = new Array(actualColumns).fill(0);
+    const columnWidth = width / actualColumns;
 
     return items.map(child => {
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = columnWidth * col;
-      const height = child.height / 2;
+      // Calculate responsive height that preserves aspect ratio based on a reference width
+      const referenceWidth = 400; // Arbitrary reference width where child.height is 1:1
+      const height = (columnWidth / referenceWidth) * child.height;
       const y = colHeights[col];
 
       colHeights[col] += height;
 
       return { ...child, x, y, w: columnWidth, h: height };
     });
-  }, [columns, items, width]);
+  }, [actualColumns, items, width]);
 
   const hasMounted = useRef(false);
 
   useLayoutEffect(() => {
     if (!imagesReady) return;
+
+    const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     grid.forEach((item, index) => {
       const selector = `[data-key="${item.id}"]`;
@@ -162,21 +172,21 @@ const Masonry = ({
           y: initialPos.y,
           width: item.w,
           height: item.h,
-          ...(blurToFocus && { filter: 'blur(10px)' })
+          ...(blurToFocus && !prefersReducedMotion && { filter: 'blur(10px)' })
         };
 
         gsap.fromTo(selector, initialState, {
           opacity: 1,
           ...animationProps,
-          ...(blurToFocus && { filter: 'blur(0px)' }),
-          duration: 0.8,
+          ...(blurToFocus && !prefersReducedMotion && { filter: 'blur(0px)' }),
+          duration: prefersReducedMotion ? 0 : 0.8,
           ease: 'power3.out',
-          delay: index * stagger
+          delay: prefersReducedMotion ? 0 : index * stagger
         });
       } else {
         gsap.to(selector, {
           ...animationProps,
-          duration: duration,
+          duration: prefersReducedMotion ? 0 : duration,
           ease: ease,
           overwrite: 'auto'
         });
@@ -188,6 +198,11 @@ const Masonry = ({
   }, [grid, imagesReady, stagger, animateFrom, blurToFocus, duration, ease]);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, item: any) => {
+    // Disable hover effects on touch devices to prevent stuck scales
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      return;
+    }
+
     const element = e.currentTarget;
     const selector = `[data-key="${item.id}"]`;
 
@@ -211,6 +226,10 @@ const Masonry = ({
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>, item: any) => {
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      return;
+    }
+
     const element = e.currentTarget;
     const selector = `[data-key="${item.id}"]`;
 

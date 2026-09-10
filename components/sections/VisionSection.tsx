@@ -127,19 +127,19 @@ export default function VisionSection() {
         </motion.article>
 
         {/* Masonry Interlude */}
-        <div className="py-16 md:py-24 border-t border-text-secondary/10">
+        <div className="py-10 sm:py-14 md:py-20 lg:py-24 border-t border-text-secondary/10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-12 md:mb-16 text-center"
+            className="mb-8 md:mb-12 lg:mb-16 text-center"
           >
-            <h3 className="font-heading text-2xl md:text-3xl text-primary-text font-bold">
+            <h3 className="font-heading text-[clamp(1.75rem,5vw,3rem)] text-primary-text font-bold">
               سردية الأجزاء الثلاثة
             </h3>
           </motion.div>
-          <div className="w-full relative" style={{ minHeight: '600px' }}>
+          <div className="w-full relative px-2 sm:px-4 md:px-0" style={{ minHeight: '600px' }}>
             <Masonry
               items={narrativeImages}
               ease="power3.out"
