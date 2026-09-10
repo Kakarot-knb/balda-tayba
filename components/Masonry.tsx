@@ -134,15 +134,24 @@ const Masonry = ({
     const colHeights = new Array(actualColumns).fill(0);
     const columnWidth = width / actualColumns;
 
-    return items.map(child => {
-      const col = colHeights.indexOf(Math.min(...colHeights));
+    return items.map((child, index) => {
+      // Force the first N items into their respective columns to maintain visual order
+      const col = index < actualColumns ? index : colHeights.indexOf(Math.min(...colHeights));
       const x = columnWidth * col;
       // Calculate responsive height that preserves aspect ratio based on a reference width
       const referenceWidth = 400; // Arbitrary reference width where child.height is 1:1
       const height = (columnWidth / referenceWidth) * child.height;
-      const y = colHeights[col];
+      
+      let y = colHeights[col];
 
-      colHeights[col] += height;
+      // Add a staggered top offset for organic visual variation
+      if (index < actualColumns && actualColumns > 1) {
+        if (col === 1) y += 80; // Shift 2nd column down noticeably
+        else if (col === 3) y += 40; // Shift 4th column down slightly
+        else if (col === 2 && actualColumns === 3) y += 40; // Shift 3rd column if only 3 cols
+      }
+
+      colHeights[col] = y + height;
 
       return { ...child, x, y, w: columnWidth, h: height };
     });
