@@ -30,7 +30,7 @@ export default function FooterSection() {
         {/* Logo cleanly sized, relying on the SVG's natural aspect ratio without hacks */}
         <div className="w-[200px] sm:w-[250px] md:w-[350px] lg:w-[450px] flex justify-center relative">
           <img 
-            src="/images/headerlogo.PNG" 
+            src="/images/headerlogo.png" 
             alt="بلدةٌ طيبة" 
             className="w-full h-auto object-contain drop-shadow-2xl"
           />

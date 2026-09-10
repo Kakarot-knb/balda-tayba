@@ -93,7 +93,7 @@ export default function Navigation() {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <Image 
-              src="/images/headerlogo.PNG" 
+              src="/images/headerlogo.png" 
               alt="بلدةٌ طيبة Logo" 
               fill 
               className="object-contain object-right"

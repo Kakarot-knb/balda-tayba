@@ -28,7 +28,7 @@ export default function HeroSection() {
             className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] aspect-[25/8] relative flex justify-center items-center mb-8 lg:mb-10 mx-auto"
           >
             <Image 
-              src="/images/headerlogo.PNG" 
+              src="/images/headerlogo.png" 
               alt="بلدةٌ طيبة Logo" 
               fill 
               className="object-contain object-center drop-shadow-2xl opacity-100"
