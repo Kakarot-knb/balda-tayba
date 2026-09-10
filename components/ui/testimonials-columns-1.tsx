@@ -68,15 +68,14 @@ function ChallengeCard({ challenge }: { challenge: Challenge }) {
 
 function MovingColumn({ 
   items, 
-  duration,
-  isHovered
+  duration
 }: { 
   items: Challenge[]; 
   duration: number;
-  isHovered: boolean;
 }) {
   const [scope, animate] = useAnimate();
   const controlsRef = useRef<any>(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (!scope.current) return;
@@ -102,7 +101,10 @@ function MovingColumn({
   useEffect(() => {
     if (!controlsRef.current) return;
     
-    if (isHovered) {
+    // Only pause if hover is supported (ignores touch devices)
+    const isHoverSupported = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
+    
+    if (isHovered && isHoverSupported) {
       controlsRef.current.pause();
     } else {
       controlsRef.current.play();
@@ -115,6 +117,8 @@ function MovingColumn({
          maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
         ref={scope}
@@ -137,31 +141,27 @@ function MovingColumn({
 }
 
 export default function TestimonialsColumns1() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <>
       <div 
         className="w-full relative mt-8 md:mt-12 motion-reduce:hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
         {/* Desktop view */}
         <div className="hidden lg:grid grid-cols-3 gap-6 xl:gap-8">
-          <MovingColumn items={col1} duration={15} isHovered={isHovered} />
-          <MovingColumn items={col2} duration={19} isHovered={isHovered} />
-          <MovingColumn items={col3} duration={17} isHovered={isHovered} />
+          <MovingColumn items={col1} duration={15} />
+          <MovingColumn items={col2} duration={19} />
+          <MovingColumn items={col3} duration={17} />
         </div>
 
         {/* Tablet view */}
         <div className="hidden md:grid lg:hidden grid-cols-2 gap-6">
-          <MovingColumn items={[...col1, ...col3]} duration={22} isHovered={isHovered} />
-          <MovingColumn items={col2} duration={18} isHovered={isHovered} />
+          <MovingColumn items={[...col1, ...col3]} duration={22} />
+          <MovingColumn items={col2} duration={18} />
         </div>
 
         {/* Mobile view */}
         <div className="grid md:hidden grid-cols-1 gap-6">
-          <MovingColumn items={[...col1, ...col2, ...col3]} duration={35} isHovered={isHovered} />
+          <MovingColumn items={[...col1, ...col2, ...col3]} duration={35} />
         </div>
       </div>
 

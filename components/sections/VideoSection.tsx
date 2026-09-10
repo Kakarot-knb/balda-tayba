@@ -25,7 +25,7 @@ export default function VideoSection() {
             {/* 16:9 Aspect Ratio Container */}
             <div className="relative w-full pb-[56.25%]">
               <iframe 
-                src="https://player.vimeo.com/video/1225461114?title=0&byline=0&portrait=0&color=9B2226&dnt=1" 
+                src="https://player.vimeo.com/video/1225578443?title=0&byline=0&portrait=0&color=9B2226&dnt=1" 
                 className="absolute top-0 left-0 w-full h-full border-0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
                 allowFullScreen

@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
+import PromoPosterSection from "@/components/sections/PromoPosterSection";
 import VideoSection from "@/components/sections/VideoSection";
 import ConceptSection from "@/components/sections/ConceptSection";
 import ObjectiveSection from "@/components/sections/ObjectiveSection";
@@ -45,6 +46,7 @@ export default function Home() {
         }}
       />
       <HeroSection />
+      <PromoPosterSection />
       <VideoSection />
       <ConceptSection />
       <ObjectiveSection />
