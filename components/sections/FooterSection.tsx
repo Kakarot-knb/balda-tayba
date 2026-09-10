@@ -9,7 +9,7 @@ export default function FooterSection() {
       
       {/* Decorative Poppy Left */}
       <motion.div
-        className="absolute bottom-0 left-0 w-72 md:w-[28rem] pointer-events-none -translate-x-1/4 translate-y-1/4 rotate-[-15deg] z-0 opacity-80"
+        className="absolute bottom-0 left-0 w-40 sm:w-56 md:w-72 lg:w-[28rem] pointer-events-none -translate-x-1/4 translate-y-1/4 rotate-[-15deg] z-0 opacity-80"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.8 }}
         viewport={{ once: true }}
