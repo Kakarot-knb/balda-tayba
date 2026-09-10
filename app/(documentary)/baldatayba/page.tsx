@@ -17,7 +17,7 @@ import FooterSection from "@/components/sections/FooterSection";
 
 export default function Home() {
   return (
-    <main className="relative w-full min-h-screen overflow-x-hidden bg-primary-bg">
+    <main className="relative w-full min-h-screen bg-primary-bg">
       {/* Structured Data (JSON-LD) */}
       <script
         type="application/ld+json"

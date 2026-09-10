@@ -1,6 +1,35 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Masonry from '../Masonry';
+
+const narrativeImages = [
+  {
+    id: 'tayba-01',
+    img: '/images/PLACEHOLDER-01.jpg',
+    height: 600
+  },
+  {
+    id: 'tayba-02',
+    img: '/images/PLACEHOLDER-02.jpg',
+    height: 800
+  },
+  {
+    id: 'tayba-03',
+    img: '/images/PLACEHOLDER-03.jpg',
+    height: 500
+  },
+  {
+    id: 'tayba-04',
+    img: '/images/PLACEHOLDER-04.jpg',
+    height: 700
+  },
+  {
+    id: 'tayba-05',
+    img: '/images/PLACEHOLDER-05.jpg',
+    height: 600
+  }
+];
 
 const filmParts = [
   {
@@ -96,6 +125,34 @@ export default function VisionSection() {
             </p>
           </div>
         </motion.article>
+
+        {/* Masonry Interlude */}
+        <div className="py-16 md:py-24 border-t border-text-secondary/10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-12 md:mb-16 text-center"
+          >
+            <h3 className="font-heading text-2xl md:text-3xl text-primary-text font-bold">
+              سردية الأجزاء الثلاثة
+            </h3>
+          </motion.div>
+          <div className="w-full relative" style={{ minHeight: '600px' }}>
+            <Masonry
+              items={narrativeImages}
+              ease="power3.out"
+              duration={1.2}
+              stagger={0.06}
+              animateFrom="bottom"
+              scaleOnHover={true}
+              hoverScale={0.97}
+              blurToFocus={true}
+              colorShiftOnHover={false}
+            />
+          </div>
+        </div>
 
         {/* Subsection 3 - Structure */}
         <motion.article 
