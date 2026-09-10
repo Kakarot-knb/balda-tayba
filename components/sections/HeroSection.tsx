@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-6 md:px-12 lg:px-24 w-full flex-1 flex flex-col justify-center relative z-10 pt-16 pb-16 md:pt-24 md:pb-24 lg:pt-0 lg:pb-0">
 
         {/* Centered Content */}
-        <div className="w-full max-w-5xl mx-auto flex flex-col justify-center items-center flex-1 z-20 relative px-4">
+        <div className="w-full max-w-5xl mx-auto flex flex-col justify-center items-center flex-1 z-30 relative px-4">
           
           {/* Logo Container */}
           <motion.div 
@@ -48,6 +48,32 @@ export default function HeroSection() {
           
         </div>
       </div>
+
+      {/* Decorative Poppy - Bottom Left */}
+      <motion.div 
+        className="absolute z-20 pointer-events-none"
+        initial={{ opacity: 0, x: -30, y: 30 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        style={{
+          // On mobile, push it slightly off-screen to avoid text collision,
+          // on desktop it rests naturally at the bottom left.
+          bottom: 'clamp(-40px, -5vw, 0px)',
+          left: 'clamp(-40px, -5vw, 0px)',
+          // Scale smoothly. On a 320px screen, 100px is small enough not to overlap centered text.
+          width: 'clamp(100px, 20vw, 450px)',
+          transformOrigin: 'bottom left',
+        }}
+      >
+        <Image 
+          src="/images/poppy/1.png" 
+          alt="" 
+          width={500} 
+          height={800} 
+          className="w-full h-auto object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] opacity-85"
+          priority
+        />
+      </motion.div>
     </section>
   );
 }
